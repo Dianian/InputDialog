@@ -32,19 +32,12 @@ public class CustomDialog extends Dialog {
         setCanceledOnTouchOutside(true);
         setCancelable(true);
         Window window = getWindow();
-        window.setGravity(Gravity.BOTTOM);
+        window.setGravity(Gravity.BOTTOM);//dialog底部弹出
         WindowManager.LayoutParams params = window.getAttributes();
         params.width = WindowManager.LayoutParams.MATCH_PARENT;
         params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         window.setAttributes(params);
 
         et_input = findViewById(R.id.et_input);
-    }
-
-    public void del() {
-        //删除光标前的字符
-        int index = et_input.getSelectionStart();
-        Editable editable = et_input.getText();
-        editable.delete(index-1, index);
     }
 }
